@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storybook Digital Portfolio | ULIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        cottage: {
+                            bg: '#fdf6e3',       /* Màu kem nền giấy */
+                            card: '#fffaf0',     /* Giấy trắng ấm */
+                            green: '#5d6d3c',    /* Xanh lá xô thơm */
+                            brown: '#7f5539',    /* Nâu gỗ */
+                            orange: '#bc6c25',   /* Cam đất */
+                            border: '#e9edc9'    /* Vàng chanh nhạt */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fdf6e3;
+            background-image: radial-gradient(#e9edc9 1px, transparent 1px);
+            background-size: 20px 20px; /* Họa tiết chấm bi mờ nhat */
+        }
+        
+        .paper-card {
+            background-color: #fffaf0;
+            border-radius: 24px;
+            border: 4px solid #e9edc9;
+            box-shadow: 0 10px 30px rgba(127, 85, 57, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Họa tiết sọc caro (Gingham) viền trên card */
+        .gingham-header {
+            height: 20px;
+            width: 100%;
+            background-image: repeating-linear-gradient(45deg, #e9edc9 25%, transparent 25%, transparent 75%, #e9edc9 75%, #e9edc9), repeating-linear-gradient(45deg, #e9edc9 25%, #fffaf0 25%, #fffaf0 75%, #e9edc9 75%, #e9edc9);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        /* Khung viền cho PDF */
+        .pdf-frame {
+            width: 100%;
+            height: 600px;
+            border: 4px dashed #ccd5ae;
+            border-radius: 16px;
+            background-color: #fefae0;
+            overflow: hidden;
+        }
+        
+        /* Chỉnh thanh cuộn phong cách mộc mạc */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf6e3; }
+        ::-webkit-scrollbar-thumb { background: #ccd5ae; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-cottage-brown antialiased selection:bg-cottage-green selection:text-white">
+
+    <nav class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+        <div class="bg-white/80 backdrop-blur-md border-2 border-cottage-border rounded-full px-6 py-3 flex gap-6 font-bold shadow-sm text-sm">
+            <a href="#intro" class="hover:text-cottage-orange transition">Giới thiệu</a>
+            <a href="#assignments" class="hover:text-cottage-orange transition">Các Dự Án</a>
+            <a href="#reflection" class="hover:text-cottage-orange transition">Tổng kết</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-28 pb-20 space-y-16">
+
+        <section id="intro" class="paper-card p-0">
+            <div class="gingham-header"></div>
+            <div class="p-10 md:p-14">
+                <div class="text-center mb-10">
+                    <h1 class="font-serif text-5xl md:text-6xl text-cottage-green mb-4">Nhật ký Công nghệ số</h1>
+                    <p class="font-serif italic text-2xl text-cottage-orange">Nhập môn CNS & AI | ULIS-VNU</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <div class="w-48 h-48 rounded-full border-8 border-cottage-border bg-cottage-bg flex items-center justify-center text-7xl shrink-0">
+                        🌱
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h2 class="font-bold text-3xl">Nguyễn Văn A</h2>
+                        <p class="font-semibold text-cottage-green">Sinh viên Sư phạm Tiếng Anh | Mã SV: 221T0001</p>
+                        <p class="leading-relaxed">
+                            Chào mừng thầy cô đến với "căn phòng học tập" của em. Góc nhỏ này là nơi em lưu giữ hành trình biến AI từ một khái niệm xa lạ trở thành người trợ lý đắc lực. 
+                        </p>
+                        <div class="bg-cottage-bg p-4 rounded-xl border border-cottage-border mt-4">
+                            <p class="font-bold text-sm text-cottage-orange mb-1">Mục tiêu học tập:</p>
+                            <p class="text-sm">Áp dụng công nghệ để hệ thống hóa tri thức, sáng tạo nội dung giảng dạy và xây dựng tư duy học thuật liêm chính trong thời đại số.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assignments">
+            <h2 class="font-serif text-4xl text-cottage-green mb-10 text-center">Các Dự Án Thành Phần</h2>
+
+            <div class="space-y-12">
+                <article class="paper-card p-8 relative">
+                    <div class="absolute top-0 right-0 bg-cottage-green text-white px-4 py-1 rounded-bl-xl font-bold text-sm shadow-md">Đã hoàn thành</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 1: Quản lý tệp và thư mục</h3>
+                    <p class="mb-6 text-sm">Trình bày cấu trúc thư mục lưu trữ tối ưu trên Cloud và quy tắc đặt tên tệp tin khoa học.</p>
+                    
+                    <div class="pdf-frame">
+                        <iframe src="tmpjsn7nt_thao-tac-co-ban-voi-tep-tin-va-thu-muc-.pdf#view=FitH" width="100%" height="100%" style="border: none;"></iframe>
+                    </div>
+                    <div class="text-right mt-2">
+                        <a href="tmpjsn7nt_thao-tac-co-ban-voi-tep-tin-va-thu-muc-.pdf" target="_blank" class="text-xs font-bold text-cottage-green hover:underline">Mở file trong tab mới ↗</a>
+                    </div>
+                </article>
+
+                <article class="paper-card p-8">
+                    <div class="absolute top-0 right-0 bg-gray-300 text-gray-600 px-4 py-1 rounded-bl-xl font-bold text-sm">Đang thực hiện</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 2: Tìm kiếm & Đánh giá thông tin</h3>
+                    <p class="mb-6 text-sm">Kết quả tìm kiếm học thuật bằng toán tử nâng cao và bảng đánh giá nguồn tin.</p>
+                    <div class="pdf-frame flex flex-col items-center justify-center bg-gray-50 border-gray-300 text-gray-400">
+                        <span class="text-4xl mb-4">📚</span>
+                        <p class="font-bold">Đang cập nhật tài liệu</p>
+                        <p class="text-xs mt-2">(Sau khi làm xong, thay tên file pdf vào thẻ iframe trong code)</p>
+                    </div>
+                </article>
+
+                <article class="paper-card p-8">
+                    <div class="absolute top-0 right-0 bg-gray-300 text-gray-600 px-4 py-1 rounded-bl-xl font-bold text-sm">Đang thực hiện</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 3: Viết Prompt hiệu quả</h3>
+                    <p class="mb-6 text-sm">So sánh Prompt ban đầu và Prompt cải tiến cùng kết quả đầu ra từ AI.</p>
+                    <div class="pdf-frame flex flex-col items-center justify-center bg-gray-50 border-gray-300 text-gray-400">
+                        <span class="text-4xl mb-4">🤖</span>
+                        <p class="font-bold">Đang cập nhật tài liệu</p>
+                    </div>
+                </article>
+
+                <article class="paper-card p-8">
+                    <div class="absolute top-0 right-0 bg-gray-300 text-gray-600 px-4 py-1 rounded-bl-xl font-bold text-sm">Đang thực hiện</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 4: Hợp tác trực tuyến</h3>
+                    <p class="mb-6 text-sm">Minh chứng việc sử dụng công cụ quản lý dự án nhóm và phối hợp trực tuyến.</p>
+                    <div class="pdf-frame flex flex-col items-center justify-center bg-gray-50 border-gray-300 text-gray-400">
+                        <span class="text-4xl mb-4">👥</span>
+                        <p class="font-bold">Đang cập nhật tài liệu</p>
+                    </div>
+                </article>
+
+                <article class="paper-card p-8">
+                    <div class="absolute top-0 right-0 bg-gray-300 text-gray-600 px-4 py-1 rounded-bl-xl font-bold text-sm">Đang thực hiện</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 5: Sáng tạo nội dung với AI</h3>
+                    <p class="mb-6 text-sm">Sản phẩm nội dung số (hình ảnh/bài viết) được hỗ trợ bởi AI.</p>
+                    <div class="pdf-frame flex flex-col items-center justify-center bg-gray-50 border-gray-300 text-gray-400">
+                        <span class="text-4xl mb-4">🎨</span>
+                        <p class="font-bold">Đang cập nhật tài liệu</p>
+                    </div>
+                </article>
+
+                <article class="paper-card p-8">
+                    <div class="absolute top-0 right-0 bg-gray-300 text-gray-600 px-4 py-1 rounded-bl-xl font-bold text-sm">Đang thực hiện</div>
+                    <h3 class="font-serif text-2xl text-cottage-orange mb-2">Bài 6: AI có trách nhiệm</h3>
+                    <p class="mb-6 text-sm">Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên nghiên cứu.</p>
+                    <div class="pdf-frame flex flex-col items-center justify-center bg-gray-50 border-gray-300 text-gray-400">
+                        <span class="text-4xl mb-4">⚖️</span>
+                        <p class="font-bold">Đang cập nhật tài liệu</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="reflection" class="paper-card p-0 mt-20">
+            <div class="p-10 md:p-14 bg-cottage-green text-white">
+                <h2 class="font-serif text-4xl mb-8 border-b border-white/20 pb-4">Tổng Kết & Cảm Nghĩ</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="md:col-span-2 space-y-4 text-white/90 leading-relaxed text-lg">
+                        <p>
+                            Quá trình thực hiện Portfolio này giống như việc em tự sắp xếp lại ngăn bàn học tập của mình vậy. Từ việc chỉ quen lưu file bừa bãi, em đã biết cách phân loại thư mục (Bài 1) và biết cách "trò chuyện" có cấu trúc với AI.
+                        </p>
+                        <p>
+                            Kỹ năng quan trọng nhất em nhận được là <strong>Tư duy làm chủ công cụ</strong>. Công nghệ sẽ chỉ là những cỗ máy vô hồn nếu không có sự định hướng và sáng tạo của con người.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white text-cottage-brown p-6 rounded-2xl text-center transform rotate-2 shadow-lg">
+                        <p class="font-serif text-3xl text-cottage-orange mb-2">Tốt</p>
+                        <p class="text-xs uppercase tracking-widest font-bold mb-4 border-b pb-2">Tự Đánh Giá</p>
+                        <p class="text-sm italic">"Em tự tin rằng các kỹ năng này là hành trang vững chắc cho công việc giảng dạy Tiếng Anh của em sau này."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-sm font-bold text-cottage-green/60 mt-10">
+            🌿 Storybook Portfolio © 2026 | Nhập môn CNS & AI | ULIS-VNU
+        </footer>
+
+    </main>
+
+</body>
+</html>
